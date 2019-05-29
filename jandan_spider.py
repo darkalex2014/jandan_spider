@@ -20,9 +20,9 @@ def save_jpg(res_url):
         index += 1
 
 
-#  抓取煎蛋妹子图片，默认抓取5页,3ye
+#  抓取煎蛋妹子图片，改成10页抓取
 if __name__ == '__main__':
     url = 'http://jandan.net/ooxx'
-    for i in range(0, 3):
+    for i in range(0, 10):
         save_jpg(url)
         url = "http:" + BeautifulSoup(requests.get(url, headers=headers).text).find('a', {'class': 'previous-comment-page'}).get('href')
